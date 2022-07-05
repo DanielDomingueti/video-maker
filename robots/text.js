@@ -1,31 +1,31 @@
 const fetch = require('cross-fetch')
 
-function robot(content) {
-    fetchContentFromWikipedia(content)
-    //   sanitizeContent(content)
-    //  breakContentIntoSentences(content)
+async function robot(content) {
+
+    //Return fetched value from wikipedia
+    return extractValueFromFetch(await fetchContentFromWikipedia(content.searchTerm))
+
+    // sanitizeContent(content)
+    // breakContentIntoSentences(content)
 }
 
-function fetchContentFromWikipedia(content) {
+async function fetchContentFromWikipedia(value) {
+    let url = `https://en.wikipedia.org/w/api.php?action=query&prop=extracts&titles=${value}&explaintext&format=json`;
 
-    let url = `https://en.wikipedia.org/w/api.php?action=query&prop=extracts&titles=rome&explaintext&format=json`;
-
-    let settings = {
-        // mode: 'no-cors',
-        method: 'GET',
-        headers: { 'Content-Type':'application/json' }
-    }
-
-    fetch(url, settings)
-        .then(response => {
-            if (response != null) {
-                response.json().then(json => {
-                    console.log(json.query.pages)
-                })
-            }
+    return fetch(url)
+        .then((resp) => {
+            return resp.json()
         })
-        
+        .then((data) => {
+            return JSON.stringify(data.query.pages)
+        })
+}
 
+function extractValueFromFetch(returnedFetchContent) {
+    const parsedJson = JSON.parse(returnedFetchContent)
+    const key = Object.keys(parsedJson)[0]
+    const { extract } = parsedJson[key]
+    return extract
 }
 
 module.exports = robot
