@@ -12,6 +12,7 @@ async function start() {
 
     content.userInput = robots.userInput(content.searchTerm)
     content.sourceContentOriginal = await robots.text(content)
+    // console.log(await robots.text(content))
 
     function askAndReturnSearchTerm() {
         return readLine.question('Type a Wikipedia search term: ')
