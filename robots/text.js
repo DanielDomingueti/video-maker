@@ -3,8 +3,7 @@ const fetch = require('cross-fetch')
 async function robot(content) {
 
     //Return fetched value from wikipedia
-    return extractValueFromFetch(await fetchContentFromWikipedia(content.searchTerm))
-
+    content.sourceContentOriginal = extractValueFromFetch(await fetchContentFromWikipedia(content.searchTerm))
     // sanitizeContent(content)
     // breakContentIntoSentences(content)
 }
@@ -19,6 +18,10 @@ async function fetchContentFromWikipedia(value) {
         .then((data) => {
             return JSON.stringify(data.query.pages)
         })
+}
+
+function sanitizeContent(content) {
+
 }
 
 function extractValueFromFetch(returnedFetchContent) {
