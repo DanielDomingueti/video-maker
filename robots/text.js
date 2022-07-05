@@ -4,7 +4,7 @@ async function robot(content) {
 
     //Return fetched value from wikipedia
     content.sourceContentOriginal = extractValueFromFetch(await fetchContentFromWikipedia(content.searchTerm))
-    // sanitizeContent(content)
+    sanitizeContent(content)
     // breakContentIntoSentences(content)
 }
 
@@ -21,6 +21,31 @@ async function fetchContentFromWikipedia(value) {
 }
 
 function sanitizeContent(content) {
+    const withoutBlankLines = removeBlankLines(content.sourceContentOriginal)
+    const withoutMarkdown = removeMarkdown(withoutBlankLines)
+    console.log(withoutMarkdown)
+
+    function removeBlankLines(text) {
+        const allLines = text.split('\n')
+    
+        const withoutBlankLines = allLines.filter((line) => {
+            if (line.trim().length === 0) {
+                return false
+            }
+            return true
+        })
+        return withoutBlankLines
+    }
+
+    function removeMarkdown(lines) {
+        const withoutMarkdown = lines.filter((line) => {
+            if (line.trim().startsWith('=')) {
+                return false
+            }
+            return true
+        })
+        return withoutMarkdown
+    }
 
 }
 
