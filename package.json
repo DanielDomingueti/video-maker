@@ -1,22 +1,8 @@
 {
-  "name": "video-maker",
-  "version": "1.0.0",
-  "description": "Building a software able to create videos automatically",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/DanielDomingueti/video-maker.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/DanielDomingueti/video-maker/issues"
-  },
-  "homepage": "https://github.com/DanielDomingueti/video-maker#readme",
   "dependencies": {
+    "algorithmia": "^0.3.10",
+    "cross-fetch": "^3.1.5",
+    "node-fetch": "^3.2.6",
     "readline-sync": "^1.4.10"
   }
 }
