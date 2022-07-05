@@ -1,78 +1,78 @@
 {
   "workbench.colorCustomizations": {
-      "[Dracula]": {
-        // background do editor de código
-        "editor.background": "#1a1a2c",
-  
-        // -------------------------------------
-  
-        // Menu
-  
-        "menu.background": "#131322",
-        // erros no menu
-        "badge.background": "#f24f3a",
-        // divisões no menu
-        "sideBarSectionHeader.background": "#2a2a41",
-        // lateral background menu
-        "sideBar.background": "#12121f",
-  
-        // ------------------------------------------------
-  
-        // Terminal
-  
-        "terminal.background": "#1a1a2c",
-        "panel.background": "#1a1a2c",
-  
-        // ------------------------------------------------
-  
-        // Barra de baixo do vscode
-  
-        "statusBar.background": "#1e1f30",
-        // cores das letras
-        "statusBar.foreground": "#fff",
-        // hover dos itens
-        "statusBarItem.hoverBackground": "#4e4e5b",
-        "statusBarItem.remoteBackground": "#1a1a2c",
-        "statusBarItem.remoteForeground": "#15202b",
-  
-        // ------------------------------------------------
-  
-        // Tabs do código
-  
-        // fundo de trás das tabs
-        "editorGroupHeader.tabsBackground": "#12121f",
-        "tab.activeBackground": "#20223c",
-        "tab.inactiveBackground": "#12121f",
-        // borda de separação entre tabs
-        "tab.border": "#2d2d43",
-        "tab.hoverBackground": "#1c1c34",
-  
-        // ------------------------------------------------
-  
-        // Barra lateral
-  
-        // background item ativo
-        "activityBar.activeBackground": "#2a2a41",
-        // item ativo color
-        "activityBar.foreground": "#fff",
-        // background padrão
-        "activityBar.background": "#1a1a2c",
-        // item inativo color
-        "activityBar.inactiveForeground": "#7a7a87",
-  
-        // ------------------------------------------------
-  
-        // Barras de atividade de dentro da sidebar
-  
-        // divisor dos painés de dentro da barra
-        "sideBarSectionHeader.border": "#464663",
-        // divisor da barra lateral
-        "sideBar.border": "#464663",
-  
-        // ------------------------------------------------
-  
-        "activityBar.activeBorder": "#ffffff",
-        "activityBarBadge.background": "#f24f3a"
-      }
-    },
+    "[Dracula]": {
+      // background do editor de código
+      "editor.background": "#1a1a2c",
+
+      // -------------------------------------
+
+      // Menu
+
+      "menu.background": "#131322",
+      // erros no menu
+      "badge.background": "#f24f3a",
+      // divisões no menu
+      "sideBarSectionHeader.background": "#2a2a41",
+      // lateral background menu
+      "sideBar.background": "#12121f",
+
+      // ------------------------------------------------
+
+      // Terminal
+
+      "terminal.background": "#1a1a2c",
+      "panel.background": "#1a1a2c",
+
+      // ------------------------------------------------
+
+      // Barra de baixo do vscode
+
+      "statusBar.background": "#1e1f30",
+      // cores das letras
+      "statusBar.foreground": "#fff",
+      // hover dos itens
+      "statusBarItem.hoverBackground": "#4e4e5b",
+      "statusBarItem.remoteBackground": "#1a1a2c",
+      "statusBarItem.remoteForeground": "#15202b",
+
+      // ------------------------------------------------
+
+      // Tabs do código
+
+      // fundo de trás das tabs
+      "editorGroupHeader.tabsBackground": "#12121f",
+      "tab.activeBackground": "#20223c",
+      "tab.inactiveBackground": "#12121f",
+      // borda de separação entre tabs
+      "tab.border": "#2d2d43",
+      "tab.hoverBackground": "#1c1c34",
+
+      // ------------------------------------------------
+
+      // Barra lateral
+
+      // background item ativo
+      "activityBar.activeBackground": "#2a2a41",
+      // item ativo color
+      "activityBar.foreground": "#fff",
+      // background padrão
+      "activityBar.background": "#1a1a2c",
+      // item inativo color
+      "activityBar.inactiveForeground": "#7a7a87",
+
+      // ------------------------------------------------
+
+      // Barras de atividade de dentro da sidebar
+
+      // divisor dos painés de dentro da barra
+      "sideBarSectionHeader.border": "#464663",
+      // divisor da barra lateral
+      "sideBar.border": "#464663",
+
+      // ------------------------------------------------
+
+      "activityBar.activeBorder": "#ffffff",
+      "activityBarBadge.background": "#f24f3a"
+    }
+  },
 }
