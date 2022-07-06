@@ -7,6 +7,7 @@ async function robot(content) {
     content.sourceContentOriginal = extractValueFromFetch(await fetchContentFromWikipedia(content.searchTerm))
     sanitizeContent(content)
     breakContentIntoSentences(content)
+
 }
 
 async function fetchContentFromWikipedia(value) {
