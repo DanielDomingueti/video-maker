@@ -11,8 +11,7 @@ async function start() {
     content.prefix = askAndReturnPrefix()
 
     content.userInput = robots.userInput(content.searchTerm)
-    content.sourceContentOriginal = await robots.text(content)
-    // console.log(await robots.text(content))
+    await robots.text(content)
 
     function askAndReturnSearchTerm() {
         return readLine.question('Type a Wikipedia search term: ')
@@ -26,7 +25,7 @@ async function start() {
         return selectedPrefixText
     }
 
-    console.log(content)
+    // console.log(content)
 }
 
 start()
