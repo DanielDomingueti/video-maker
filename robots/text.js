@@ -1,11 +1,12 @@
 const fetch = require('cross-fetch')
+const sentenceBoundaryDetection = require('sbd')
 
 async function robot(content) {
 
     //Return fetched value from wikipedia
     content.sourceContentOriginal = extractValueFromFetch(await fetchContentFromWikipedia(content.searchTerm))
     sanitizeContent(content)
-    // breakContentIntoSentences(content)
+    breakContentIntoSentences(content)
 }
 
 async function fetchContentFromWikipedia(value) {
@@ -23,7 +24,8 @@ async function fetchContentFromWikipedia(value) {
 function sanitizeContent(content) {
     const withoutBlankLinesAndMarkdown = removeBlankLinesAndMarkdown(content.sourceContentOriginal)
     const withoutDatesInParentheses = removeDatesInParentheses(withoutBlankLinesAndMarkdown)
-    console.log(withoutDatesInParentheses)
+    //save sanitize content into our variable.
+    content.sourceContentSanitized = withoutDatesInParentheses
 
     function removeBlankLinesAndMarkdown(text) {
         const allLines = text.split('\n')
@@ -42,6 +44,20 @@ function sanitizeContent(content) {
         return text.replace(/\((?:\([^()]*\)|[^()])*\)/gm, '').replace(/  /g,' ')
     }
 
+}
+
+function breakContentIntoSentences(content) {
+    content.sentences = []
+
+    const sentences = sentenceBoundaryDetection.sentences(content.sourceContentSanitized)
+    sentences.forEach((sentence) => {
+        content.sentences.push({
+            text:sentence,
+            keywords: [],
+            images: []
+        })
+    })
+    // console.log(content.sentences)
 }
 
 function extractValueFromFetch(returnedFetchContent) {
